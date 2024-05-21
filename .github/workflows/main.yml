@@ -43,5 +43,5 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          files: coverage/lcov.info
+          files: coverage/my-angular-app/*
           fail_ci_if_error: true
