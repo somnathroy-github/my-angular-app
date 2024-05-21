@@ -40,10 +40,10 @@ jobs:
           name: coverage
           path: coverage/
       - name: check files before uploading
-        run: ls ./coverage/my-angular-app
+        run: ls coverage/my-angular-app
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          files: ./coverage/my-angular-app/*
+          files: coverage/my-angular-app/*
           fail_ci_if_error: true
