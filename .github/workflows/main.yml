@@ -39,6 +39,8 @@ jobs:
         with:
           name: coverage
           path: coverage/
+      - name: check files before uploading
+        run: ls
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v2
         with:
