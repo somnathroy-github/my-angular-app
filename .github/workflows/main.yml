@@ -40,7 +40,7 @@ jobs:
           name: coverage
           path: coverage/
       - name: check files before uploading
-        run: ls
+        run: ls ./coverage/my-angular-app
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v2
         with:
