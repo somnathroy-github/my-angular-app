@@ -45,3 +45,24 @@ jobs:
           token: ${{secrets.CODECOV_TOKEN}}
           files: coverage/lcov.info
           fail_ci_if_error: true
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.1.5
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: 'javascript' # list the languages of your project here
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+
+    - name: Archive CodeQL analysis results
+      uses: actions/upload-artifact@v3
+      with:
+        name: codeql-results
+        path: .github/codeql/codeql-sarif/*.sarif
