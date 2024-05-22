@@ -60,7 +60,9 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-
+    
+    - name: Check file codeql-sarif file got generated
+      run: ls -la .github/codeql/
     - name: Archive CodeQL analysis results
       uses: actions/upload-artifact@v3
       with:
