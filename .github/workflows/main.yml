@@ -51,5 +51,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: 'javascript,typescript' # list the languages of your project here
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
